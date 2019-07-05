@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Psychic Game</title>
+
+</head>
+
+<body>
+    <h1>The Psychic Game</h1>
+    <p>To play the game: Guess what letter the computer is thinking of.</p>
+    <div id="game">
+    <p>Wins:</p>
+    <p>Losses:</p>
+    <p>Gueses Left:</p>
+    <p>Guesses So Far:</p>
+    </div>
+   
+
+    <script type="text/javascript">
+
+        var options = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 8;
+        var guessesSoFar = [];
+
+        document.onkeyup = function() {
+            var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+            console.log(userGuess);
+
+        var computerGuess = options[Math.floor(Math.random()*options.length)];
+            console.log(computerGuess);
+
+    
+    // game continues if user chooses an option in the array
+    if (options.indexOf(userGuess) > -1) {
+        if (userGuess === 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z') {   
+        alert("User guessed: " + userGuess);
+          
+            if (userGuess===computerGuess) {
+            wins++;
+            guessesLeft= 8;
+			guessesSoFar = [];
+            alert("You've guessed correctly!");
+            }
+
+            // if guesses don't match, minues a chance and document user's guesses so far
+            if (userGuess !=computerGuess) {
+            guessesLeft--;
+            guessesSoFar.push(userGuess);
+            }
+
+            //if no more guesses, losses increase, guesses left restarts as game should restart
+            if (guessesLeft===0) {
+            losses++;
+            guessesLeft = 9;
+            guessesSoFar = [];
+            alert("Nice try, young grasshopper!")
+
+            }
+        }
+
+        // insert an else statement that alerts user to try again if they press a non
+        //alphabet value
+        //else { 
+        // alert ("Please choose a letter from 'a' to 'z'.");
+        // }
+
+        var html = 
+        "<p>Wins: " + wins + "</p>" +
+        "<p>Losses: " + losses + "</p>" +
+        "<p>Guesses Left:" + guessesLeft + "</p>" +
+        "<p>Guesses So Far:" + guessesSoFar + "</p>";
+
+        document.querySelector('#game').innerHTML = html;
+    }
+    
+//right now computer is making a choice everytime user selects a choice
+//input code that allows computer to make a choice every 8 tries or until user is correct
+
+
+}
+
+</script>
+
+</body>
+</html>
