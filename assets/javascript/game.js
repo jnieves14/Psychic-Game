@@ -18,7 +18,7 @@ document.onkeyup = function() {
 // game continues if user chooses an option in the array
 if (options.indexOf(userGuess) > -1) {
 if (userGuess === 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z') {   
-alert("You chose " + userGuess);
+
   
     if (userGuess===computerGuess) {
     wins++;
