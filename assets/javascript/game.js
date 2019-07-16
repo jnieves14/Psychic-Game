@@ -53,7 +53,7 @@ var html =
 "<h1>Scoreboard:</h1>" +
 "<p>Wins: " + wins + "</p>" +
 "<p>Losses: " + losses + "</p>" +
-"<p>Guesses Left:" + guessesLeft + "</p>" +
+"<br><p>Guesses Left:" + guessesLeft + "</p>" +
 "<p>Guesses So Far:" + guessesSoFar + "</p>";
 
 document.querySelector('#game').innerHTML = html;
