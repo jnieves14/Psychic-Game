@@ -8,12 +8,12 @@ var computerGuess;
 
 // initial computer guess
 var computerGuess = options[Math.floor(Math.random()*options.length)];
-    console.log(computerGuess);
+    console.log("computer guess: " + computerGuess);
 
 //game
 document.onkeyup = function() {
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log(userGuess);
+    console.log("user guess: " + userGuess);
 
 // game continues if user chooses an option in the array
 if (options.indexOf(userGuess) > -1) {
@@ -25,6 +25,8 @@ if (userGuess === 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p
     guessesLeft= 9;
     guessesSoFar = [];
     alert("You've guessed correctly!");
+    computerGuess = options[Math.floor(Math.random()*options.length)];
+    console.log("computer guess: " + computerGuess);
     }
 
     // if guesses don't match, minues a chance and document user's guesses so far
@@ -39,6 +41,8 @@ if (userGuess === 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p
     guessesLeft = 9;
     guessesSoFar = [];
     alert("Nice try, young grasshopper!")
+    computerGuess = options[Math.floor(Math.random()*options.length)];
+    console.log("computer guess: " + computerGuess);
 
     }
 }
