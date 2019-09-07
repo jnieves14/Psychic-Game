@@ -1,7 +1,7 @@
 # Psychic-Game
 
 ## Overview
-A psychic game you can runin your browser!
+A psychic game you can run in your browser!
 
 ## Instructions
 * The computer will randomly choose a letter from the alphabet
@@ -16,7 +16,7 @@ A psychic game you can runin your browser!
 
 
 ## Preview
-![](asset/images/psychic-preview.gif)
+![](assets/images/psychic-preview.gif)
 
 
 ## Technologies Used
